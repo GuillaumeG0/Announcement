@@ -1,6 +1,17 @@
-h1, h3, figure{
+h1 {
+    font-size: 6em;
     padding: 0 20px;
     text-align: center;
+}
+
+h3, figure {
+    font-size: 3em;
+    padding: 0 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 2em;
 }
 
 .paraph {
@@ -15,15 +26,13 @@ h1, h3, figure{
 }
 
 #image-1{
-    width: 800px;
-    height: 500px;
-    padding: auto;
+    width: 90%;
+    height: auto;
 }
 
 #image-1, #image-2{
-    width: auto;
-    height: 500px;
-    padding: auto;
+    width: 70%;
+    height: auto;
 }
 
 canvas {
