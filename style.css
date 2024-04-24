@@ -1,0 +1,42 @@
+h1, h3, figure{
+    padding: 0 20px;
+    text-align: center;
+}
+
+.paraph {
+    display: none;
+    text-align: center;
+}
+
+.div-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image-1{
+    width: 800px;
+    height: 500px;
+    padding: auto;
+}
+
+#image-1, #image-2{
+    width: auto;
+    height: 500px;
+    padding: auto;
+}
+
+canvas {
+    display: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+  }
+
+#annoucement{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
