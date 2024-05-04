@@ -1,8 +1,14 @@
+let duckMode = false;
+duckNames = ["Benjamin", "Florent", "Julien", "Tristan", "Cyril"];
+
 $("document").ready(function() {
     start();
     let name = getUrlParameter('name');
     if(!name) {
         name = "gentille personne";
+    } else if (name.split(",").some(x => duckNames.includes(x))) {
+        duckMode = true;
+        name = name.split(',').join(', ');
     } else {
         name = name.split(',').join(', ');
     }
@@ -23,17 +29,38 @@ function displayParaphs() {
         $(this).next( ".paraph" ).show( 2000, showNext);
         if ($("#paraph-7").is(':visible'))  {
             await sleep(4000);
-            showAnnoucement();
+            if (!duckMode) {
+                hidePrevious()
+                showAnnoucement();
+            } else {
+                hidePrevious()
+                coinCoinCoin();
+            }
+
         }
     });
 };
 
 const sleep = m => new Promise(r => setTimeout(r, m));
 
-function showAnnoucement() {
+function hidePrevious() {
     $(".paraph").hide("quick");
+}
+
+async function showAnnoucement() {
     $("#annoucement").show("quick");
+    await sleep(1000);
     $("#canvas").show("quick");
+}
+
+function coinCoinCoin() {
+    $("#canard").show("quick");
+    $("#canvas-duck").show("quick");
+    $("#image-3").on("click", () => {
+        $("#canard").hide("quick");
+        $("#canvas-duck").hide("quick");
+        showAnnoucement()
+    });
 }
 
 var getUrlParameter = function getUrlParameter(sParam) {

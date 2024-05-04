@@ -26,13 +26,17 @@ p {
 }
 
 #image-1{
-    width: 90%;
+    width: 70%;
     height: auto;
 }
 
-#image-1, #image-2{
-    width: 70%;
+#image-2{
     height: auto;
+    width: 50%;
+}
+
+#image-3{
+    z-index: 1;
 }
 
 canvas {
@@ -40,6 +44,7 @@ canvas {
     overflow-y: hidden;
     overflow-x: hidden;
     width: 100%;
+    height: 100%;
     margin: 0;
   }
 
@@ -48,4 +53,96 @@ canvas {
     width: 100%;
     text-align: center;
     display: none;
+}
+
+#canard {
+    display: none;
+}
+
+#canvas-duck {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+ 
+.falling-duck{
+    position: absolute;
+    display: block;
+    width: 10%;
+    height: 10%;
+}
+
+.falling-duck:nth-child(1){
+    animation: fall 25s linear infinite;
+    left: 10%;
+}
+
+.falling-duck:nth-child(2){
+    animation: fall 40s linear infinite;
+    left: 30%;
+}
+
+.falling-duck:nth-child(3){
+    animation: fall 20s linear infinite;
+    left: 50%;
+}
+
+.falling-duck:nth-child(4){
+    animation: fall 12s linear infinite;
+    left: 70%;
+}
+
+.falling-duck:nth-child(5){
+    animation: fall 30s linear infinite;
+    left: 90%;
+}
+
+.falling-duck:nth-child(6){
+    animation: fall 20s linear infinite;
+    left: 0%;
+}
+
+.falling-duck:nth-child(7){
+    animation: fall 18s linear infinite;
+    left: 65%;
+}
+
+.falling-duck:nth-child(8){
+    animation: fall 24s linear infinite;
+    left: 75%;
+}
+
+.falling-duck:nth-child(9){
+    animation: fall 10s linear infinite;
+    left: 12%;
+}
+
+.falling-duck:nth-child(10){
+    animation: fall 18s linear infinite;
+    left: 86%;
+}
+
+@keyframes fall{
+    0%{
+        opacity: 0;
+        top: 0em;
+        transform: translatey(0%) rotate(0deg);
+    }
+
+    10%{
+        opacity: 1;
+        transform: translatey(0%) rotate(45deg);
+    }
+
+    90% {
+        opacity:1;
+        transform: translatey(1500%) rotate(405deg);
+    }
+
+    100%{
+        opacity: 0;
+    }
 }
